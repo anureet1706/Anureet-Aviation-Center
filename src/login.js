@@ -35,6 +35,18 @@ const LoginStyles = styled.div`
       justify-content: center;
       background-color: #cccccc;
     }
+
+    .brand{
+      background-image: url("img/brand.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 100%
+    }
+
+    .tagline{
+      margin-top: 100px;
+      font-size: 20px;
+    }
 `;
 
 class Login extends React.Component {
@@ -50,53 +62,58 @@ class Login extends React.Component {
     return (
       <LoginStyles>
           <Grid container spacing={2} className="back-img">
+            <Grid item xs={6}>
+              <Grid container spacing={2}>
+                <Grid item xs={12} className="center">
+                  <h2 className="login-title">Welcome Back</h2>
+                </Grid>
 
-            <Grid item xs={12}>
-            <Grid container spacing={2}>
-            <Grid item xs={12} className="center">
-              <h2 className="login-title">Welcome Back</h2>
-            </Grid>
+                <Grid item xs={12} className="center">
+                  <TextField
+                    id="email"
+                    variant="outlined"
+                    label="Email Address"
+                    value={this.state.email}
+                    onChange={(e) => this.onEmailChange(e)}
+                  />
+                </Grid>
 
-            <Grid item xs={12} className="center">
-              <TextField
-                id="email"
-                variant="outlined"
-                label="Email Address"
-                value={this.state.email}
-                onChange={(e) => this.onEmailChange(e)}
-              />
-            </Grid>
+                <Grid item xs={12} className="center">
+                  <TextField
+                    id="password"
+                    label="Password"
+                    variant="outlined"
+                    value={this.state.password}
+                    onChange={(e) => this.onPasswordChange(e)}
+                  />
+                </Grid>
 
-            <Grid item xs={12} className="center">
-              <TextField
-                id="password"
-                label="Password"
-                variant="outlined"
-                value={this.state.password}
-                onChange={(e) => this.onPasswordChange(e)}
-              />
-            </Grid>
-
-            <Grid item xs={12} className="center">
-              <Button
-                component={Link}
-                to={ROUTE.DASHBOARD}
-                variant="contained"
-                className="login-button"
-                disabled={
-                  (this.state.email.length > 0 && this.state.password.length > 0)
-                    ? false
-                    : true
-                }
-              >
-                Sign In
-              </Button>
-            </Grid>
+                <Grid item xs={12} className="center" >
+                  <Button
+                    component={Link}
+                    to={ROUTE.DASHBOARD}
+                    variant="contained"
+                    className="login-button"
+                    disabled={
+                      (this.state.email.length > 0 && this.state.password.length > 0)
+                        ? false
+                        : true
+                    }
+                  >
+                    Sign In
+                  </Button>
+                </Grid>
               </Grid>
             </Grid>
-            
+            <Grid item xs={6} className="brand">
+              <Grid container spacing={2}>
+                <Grid item xs={12} className="center tagline">
+                  <h2 className="login-title">Anureet Aviation Center</h2>
+                  <h3>Why be on Earth, when you can fly high?</h3>
+                </Grid>
+              </Grid>
+            </Grid>
           </Grid>
- 
       </LoginStyles>
     );
   }

@@ -7,23 +7,25 @@ import { Link } from "react-router-dom";
 import { ROUTE } from "./routes";
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
+import Avatar from '@mui/material/Avatar';
+
 
 export default function ButtonAppBar(props) {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
-          <IconButton
+        <IconButton
             size="large"
             edge="start"
             color="inherit"
             aria-label="menu"
             sx={{ mr: 2 }}
           >
-            
+            <Avatar src="img/logo.png" />
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-          Dashboard
+          Anureet Aviation Center
           </Typography>
           <Button color="inherit" onClick={() => props.onAdd()}>Add New</Button>
           <Button
