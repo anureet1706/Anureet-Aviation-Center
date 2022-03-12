@@ -1,12 +1,6 @@
-# Crakit React Starter
+# Anureet Aviation Center
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
- `npm start`  
- Runs the app in the development mode. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
- 
-`npm run build`  
-Builds the app for production to the build folder. 
+Anureet avaitaion center sells the airplane models to airplane companies. Every user has its own username and password.
+By entering the username, password and clicking the sign in button the user is able to see all the models that are on sale at that particular time. 
 
   
